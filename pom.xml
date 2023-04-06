@@ -17,12 +17,7 @@
         <module>lottery-interfaces</module>
         <module>lottery-rpc</module>
         <module>lottery-common</module>
-        <module>lottery-application</module>
-        <module>lottery-common</module>
-        <module>lottery-domain</module>
-        <module>lottery-infrastructure</module>
 
-        <module>lottery-interfaces</module>
 
     </modules>
 
