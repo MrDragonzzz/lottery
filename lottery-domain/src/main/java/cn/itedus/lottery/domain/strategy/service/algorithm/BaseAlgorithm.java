@@ -78,7 +78,7 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm{
      */
     protected int hashIdx(int val){
         int hashCode=val*HASH_INCREMENT+HASH_INCREMENT;
-        return hashCode%(RATE_TUPLE_LENGTH-1);
+        return hashCode & (RATE_TUPLE_LENGTH-1);
     }
     /**
      * 生成百位随机抽奖码

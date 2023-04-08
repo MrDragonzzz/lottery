@@ -12,6 +12,7 @@ import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -22,6 +23,7 @@ import java.util.List;
  * @author: 龙嘉翼
  * @Date: 2023/4/6
  */
+@Service
 public class ActivityDeployImpl implements IActivityDeploy {
     private Logger logger = LoggerFactory.getLogger(ActivityDeployImpl.class);
 

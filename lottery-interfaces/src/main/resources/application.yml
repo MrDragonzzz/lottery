@@ -11,20 +11,20 @@ mini-db-router:
       routerKey: uId
       list: db01,db02
       db00:
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://127.0.0.1:3306/lottery?useUnicode=true
         username: root
-        password: 1234
+        password: "030815"
       db01:
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://127.0.0.1:3306/lottery_01?useUnicode=true
         username: root
-        password: 1234
+        password: "030815"
       db02:
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://127.0.0.1:3306/lottery_02?useUnicode=true
         username: root
-        password: 1234
+        password: "030815"
 
 mybatis:
   mapper-locations: classpath:/mybatis/mapper/*.xml
@@ -41,6 +41,6 @@ dubbo:
     address: multicast://224.5.6.7:1234
   protocol:
     name: dubbo
-    port: 20880
+    port: 20881
   scan:
     base-packages: cn.itedus.lottery.rpc
