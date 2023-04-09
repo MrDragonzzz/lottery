@@ -14,7 +14,8 @@ public class Constants {
         ILLEGAL_PARAMETER("0002", "非法参数"),
         INDEX_DUP("0003", "主键冲突"),
         NO_UPDATE("0004", "SQL操作无更新"),
-        LOSING_DRAW("D001", "未中奖");
+        LOSING_DRAW("D001", "未中奖"),
+        RULE_ERR("D002", "量化人群规则执行失败");
 
         private String code;
         private String info;
@@ -33,6 +34,45 @@ public class Constants {
         }
 
     }
+
+    /**
+     * 全局属性
+     */
+    public static final class Global {
+        /** 空节点值 */
+        public static final Long TREE_NULL_NODE = 0L;
+    }
+
+    /**
+     * 决策树节点
+     */
+    public static final class NodeType{
+        /** 树茎 */
+        public static final Integer STEM = 1;
+        /** 果实 */
+        public static final Integer FRUIT = 2;
+    }
+
+    /**
+     * 规则限定类型
+     */
+    public static final class RuleLimitType {
+        /** 等于 */
+        public static final int EQUAL = 1;
+        /** 大于 */
+        public static final int GT = 2;
+        /** 小于 */
+        public static final int LT = 3;
+        /** 大于&等于 */
+        public static final int GE = 4;
+        /** 小于&等于 */
+        public static final int LE = 5;
+        /** 枚举 */
+        public static final int ENUM = 6;
+    }
+
+
+
 
     /**
      * 活动状态：1编辑、2提审、3撤审、4通过、5运行(审核通过后worker扫描状态)、6拒绝、7关闭、8开启
