@@ -12,17 +12,19 @@ mini-db-router:
       list: db01,db02
       db00:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/lottery?useUnicode=true
+        url: jdbc:mysql://127.0.0.1:3306/lottery?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+
         username: root
         password: "030815"
       db01:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/lottery_01?useUnicode=true
+        url: jdbc:mysql://127.0.0.1:3306/lottery_01?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+
         username: root
         password: "030815"
       db02:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/lottery_02?useUnicode=true
+        url: jdbc:mysql://127.0.0.1:3306/lottery_02?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
         username: root
         password: "030815"
 
@@ -33,7 +35,7 @@ mybatis:
 
 spring:
   kafka:
-    bootstrap-servers: 192.168.200.130:9092
+    bootstrap-servers: 47.115.214.132:9092
     producer:
       # 发生错误后，消息重发的次数。
       retries: 1
@@ -68,6 +70,12 @@ spring:
       #listner负责ack，每调用一次，就立即commit
       ack-mode: manual_immediate
       missing-topics-fatal: false
+
+  redis:
+    database: 0
+    host: 47.115.214.132     # Redis服务器地址，修改为你的地址
+    port: 6379              # Redis服务器连接端口
+
 
 
 # xxl-job

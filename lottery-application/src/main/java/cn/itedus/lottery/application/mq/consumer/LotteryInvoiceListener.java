@@ -2,7 +2,9 @@ package cn.itedus.lottery.application.mq.consumer;
 
 import cn.hutool.core.lang.Assert;
 import cn.itedus.lottery.common.Constants;
+import cn.itedus.lottery.domain.activity.model.vo.ActivityPartakeRecordVO;
 import cn.itedus.lottery.domain.activity.model.vo.InvoiceVO;
+import cn.itedus.lottery.domain.activity.service.partake.IActivityPartake;
 import cn.itedus.lottery.domain.award.model.req.GoodsReq;
 import cn.itedus.lottery.domain.award.model.res.DistributionRes;
 import cn.itedus.lottery.domain.award.service.factory.DistributionGoodsFactory;
@@ -33,6 +35,7 @@ public class LotteryInvoiceListener {
 
     @Resource
     private DistributionGoodsFactory distributionGoodsFactory;
+
 
     @KafkaListener(topics = "lottery_invoice", groupId = "lottery")
     public void onMessage(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic){
@@ -66,4 +69,7 @@ public class LotteryInvoiceListener {
             throw e;
         }
     }
+
+
+
 }
